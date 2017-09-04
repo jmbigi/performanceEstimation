@@ -43,7 +43,7 @@ PredTask <- function(form,data,taskName=NULL,type=NULL,copy=FALSE) {
 
   if (!copy) {
       data <- substitute(data)
-      eval.env <- 2
+      eval.env <- parent.frame()
       if (is.null(taskName)) taskName <- paste(deparse(data),tgt,sep=".")
   } else {
       eval.env <- 1
